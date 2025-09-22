@@ -6,6 +6,25 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		A856BED42E7EC79000DA9B3B /* SwiftAA in Frameworks */ = {isa = PBXBuildFile; productRef = A856BED32E7EC79000DA9B3B /* SwiftAA */; };
+		A856BEE02E7EF00200DA9B3B /* SwiftAA in Embed Frameworks */ = {isa = PBXBuildFile; productRef = A856BED32E7EC79000DA9B3B /* SwiftAA */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A856BEE12E7EF00200DA9B3B /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A856BEE02E7EF00200DA9B3B /* SwiftAA in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		A856BEA02E7EC54600DA9B3B /* Gassyuku.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gassyuku.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -23,6 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A856BED42E7EC79000DA9B3B /* SwiftAA in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,6 +75,7 @@
 				A856BE9C2E7EC54600DA9B3B /* Sources */,
 				A856BE9D2E7EC54600DA9B3B /* Frameworks */,
 				A856BE9E2E7EC54600DA9B3B /* Resources */,
+				A856BEE12E7EF00200DA9B3B /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -65,6 +86,7 @@
 			);
 			name = Gassyuku;
 			packageProductDependencies = (
+				A856BED32E7EC79000DA9B3B /* SwiftAA */,
 			);
 			productName = Gassyuku;
 			productReference = A856BEA02E7EC54600DA9B3B /* Gassyuku.app */;
@@ -94,6 +116,9 @@
 			);
 			mainGroup = A856BE972E7EC54600DA9B3B;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				A856BED22E7EC79000DA9B3B /* XCRemoteSwiftPackageReference "SwiftAA" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = A856BEA12E7EC54600DA9B3B /* Products */;
 			projectDirPath = "";
@@ -251,11 +276,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Gassyuku/Gassyuku.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = K36TX249G7;
+				DEVELOPMENT_TEAM = JPFFUM77LT;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "水平座標を取得するのに使います";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -266,7 +293,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "Taishi-app.Gassyuku";
+				PRODUCT_BUNDLE_IDENTIFIER = "Taishi-app.prototype";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -279,11 +306,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Gassyuku/Gassyuku.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = K36TX249G7;
+				DEVELOPMENT_TEAM = JPFFUM77LT;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "水平座標を取得するのに使います";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -294,7 +323,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "Taishi-app.Gassyuku";
+				PRODUCT_BUNDLE_IDENTIFIER = "Taishi-app.prototype";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -324,6 +353,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A856BED22E7EC79000DA9B3B /* XCRemoteSwiftPackageReference "SwiftAA" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onekiloparsec/SwiftAA";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.4.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A856BED32E7EC79000DA9B3B /* SwiftAA */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A856BED22E7EC79000DA9B3B /* XCRemoteSwiftPackageReference "SwiftAA" */;
+			productName = SwiftAA;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A856BE982E7EC54600DA9B3B /* Project object */;
 }

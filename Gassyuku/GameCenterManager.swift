@@ -66,7 +66,11 @@ extension GameCenterManager {
     }
     
     func sendData<T: Codable>(_ data: T) {
-        guard let match = currentMatch else { return }
+        guard let match = currentMatch else {
+            print("マッチしているユーザーが存在しません")
+            return
+        
+        }
         
         do {
             let jsonData = try JSONEncoder().encode(data)
@@ -96,7 +100,7 @@ extension GameCenterManager {
         let playerId = GKLocalPlayer.local.gamePlayerID
         
         let action = PlayerAction(
-            playerId: playerId, action: .sendIndexMessage, position: nil, sendIndexMessage: index
+            playerId: playerId, action: .selectIndex, position: nil, selectedIndex: index
         )
         broadcastPlayerAction(action)
         print("インデックス \(index) を送信しました。")
@@ -118,10 +122,23 @@ extension GameCenterManager {
     }
     
     private func processPlayerAction(_ action: PlayerAction) {
-        // ゲーム状態を更新
-        // UIを更新するためにPublishedプロパティを変更
-        print("プレイヤーアクション処理: \(action)")
-    }
+            // UIを更新するためにPublishedプロパティを変更
+            self.lastReceivedAction = action
+            
+            // switch文でアクションの種類によって処理を分岐
+            switch action.action {
+            case .selectIndex:
+                if let index = action.selectedIndex {
+                    print("プレイヤー \(action.playerId) がインデックス \(index) を選択しました。")
+                    // ここで、相手がインデックスを選択した時のゲームロジックを実行する
+                }
+            case .move:
+                print("プレイヤーが移動しました。")
+                // 移動処理
+            default:
+                print("その他のアクションを受信しました。")
+            }
+        }
 }
 
 
