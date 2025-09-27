@@ -23,6 +23,8 @@ struct StarGazingView: View {
                 
                 
                 ZStack(alignment: .topTrailing){
+                    
+                    
                     VStack{
                         NavigationLink{MatchmakingView()}label:{
                             // リンクの見た目（テキストやアイコン）
@@ -32,6 +34,14 @@ struct StarGazingView: View {
                         .font(.system(size: 25))
                         .frame(width: 50, height: 30)
                         .foregroundStyle(.white)
+                        
+                        Text("\(motionModel.testAngle)")
+                            .foregroundStyle(.white)
+                        Text("\(motionModel.signedVerticalAngle)")
+                            .foregroundStyle(.white)
+                        Text("\(headingManager.heading)")
+                            .foregroundStyle(.white)
+                        
                         
                         Spacer()
                         

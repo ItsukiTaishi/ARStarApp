@@ -10,6 +10,7 @@ class CoreMotionModel: ObservableObject {
     
 //    @Published var verticalAngle: Double = 0.0
     @Published var signedVerticalAngle: Double = 0.0
+    @Published var testAngle: Double = 0.0
     
     init() {
         motionManager = CMMotionManager()
@@ -33,6 +34,7 @@ class CoreMotionModel: ObservableObject {
                 let angle = atan2(gravity.y, gravity.z) // 戻り値はラジアン
                 let angleDeg = angle * 180 / .pi
                 self.signedVerticalAngle = angleDeg + 90 // ラジアンを度に変換
+                self.testAngle = angleDeg
             }
         }
     }
