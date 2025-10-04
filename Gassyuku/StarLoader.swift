@@ -9,7 +9,7 @@ class StarLoader: ObservableObject {
 
     func load() {
         // 1. ファイルのURLを取得
-        guard let url = Bundle.main.url(forResource: "browse_results (1).xls - hipparcos", withExtension: "csv") else {
+        guard let url = Bundle.main.url(forResource: "hipos", withExtension: "csv") else {
             fatalError("CSVファイルが見つかりません。")
         }
 
@@ -28,8 +28,8 @@ class StarLoader: ObservableObject {
                 if columns.count == 4 {
                     // 4. 各行のデータをStarオブジェクトに変換
                     let name = columns[0]
-                    let ra = Double(columns[1]) ?? 0.0
-                    let dec = Double(columns[2]) ?? 0.0
+                    let ra = columns[1]
+                    let dec = columns[2]
                     let vmag = Double(columns[3]) ?? 0.0
 
                     let star = Star(name: name, ra: ra, dec: dec, vmag: vmag)

@@ -8,11 +8,25 @@
 import SwiftUI
 
 struct StarView: View {
+    var star: Star
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        VStack{
+            Image("star")
+                .resizable()
+                .scaledToFit()
+                .frame(width: star.collectStar ? 50 : 25, height: star.collectStar ? 50 : 25)
+             
+
+            Text("\(star.name)")
+                .foregroundColor(.white)
+                .font(.caption)
+                
+        }
+        
     }
 }
 
-#Preview {
-    StarView()
-}
+
+
